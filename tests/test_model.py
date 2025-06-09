@@ -1,4 +1,4 @@
-from package_name import my_model
+from korkeasaari import my_model
 
 data = {"series": [1, 2, 3, 4, 5], "index": 1}
 

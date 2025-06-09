@@ -1,4 +1,4 @@
-"""Top-level module for package_name."""
+"""Top-level module for korkeasaari."""
 
 from beartype.claw import beartype_this_package
 

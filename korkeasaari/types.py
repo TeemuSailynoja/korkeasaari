@@ -13,7 +13,7 @@ Avoid:
         pass
 
 Prefer:
-    from package_name.types import DataRaw
+    from korkeasaari.types import DataRaw
     def my_function(data: DataRaw):
         pass
 """
