@@ -8,12 +8,23 @@ format:
     slide-number: true
     transition: fade
 ---
-
 # Introduction
 
 Welcome to the Korkeasaari Zoo PyMC timeseries modeling presentation.
 
----
+# Data Sources & Preprocessing
+
+- **Visitor data:** Daily counts from Korkeasaari Zoo (`data/clean/visitors.csv`).
+  - Columns: `date`, `visitors`, `day_of_week` (Finnish abbreviations)
+  - Low visitor counts indicate closure days.
+- **Weather data:** Daily rain and max temperature (`data/clean/weather.csv`).
+  - Columns: `date`, `rain_sum`, `temperature_2m_max`
+  - Date standardized to `YYYY-MM-DD` for merging.
+- **Preprocessing:**
+  - Checked for missing/duplicate dates in both datasets
+  - Filtered to overlapping date range
+  - Merged datasets on `date`
+  - Saved merged data to `data/clean/visitors_weather_merged.csv`
 
 # Modeling Workflow
 

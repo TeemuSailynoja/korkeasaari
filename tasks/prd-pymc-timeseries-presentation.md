@@ -1,7 +1,7 @@
 # Product Requirements Document: PyMC Timeseries Model Presentation for PyData
 
 ## 1. Introduction/Overview
-This project aims to create a Quarto revealjs presentation (with optional Marimo/Jupyter notebook version) for PyData attendees, demonstrating the incremental improvement of a PyMC timeseries model using Korkeasaari Zoo daily visitor data. The presentation will highlight the Bayesian modeling workflow, starting from a simple model and gradually incorporating weather and special events, with a focus on clarity and accessibility for those new to PyMC and Bayesian methods.
+This project aims to create a Quarto revealjs presentation (with optional Marimo notebook version) for PyData attendees, demonstrating the incremental improvement of a PyMC timeseries model using Korkeasaari Zoo daily visitor data. The presentation will highlight the Bayesian modeling workflow, starting from a simple model and gradually incorporating weather and special events, with a focus on clarity and accessibility for those new to PyMC and Bayesian methods.
 
 ## 2. Goals
 - Deliver a clear, engaging 30–45 minute presentation for PyData attendees
@@ -28,7 +28,7 @@ This project aims to create a Quarto revealjs presentation (with optional Marimo
    - Brief summary of convergence checks
    - Comparison to previous step
 5. The appendix must include parameter posterior plots.
-6. The presentation must be exportable as HTML and optionally as a Marimo/Jupyter notebook.
+6. The presentation must be exportable as HTML and optionally as a Marimo notebook.
 7. The presentation must be suitable for a human presenter (not fully automated narration).
 8. The presentation must be visually consistent and accessible, following the Nord color scheme.
 
@@ -46,8 +46,8 @@ This project aims to create a Quarto revealjs presentation (with optional Marimo
 
 ## 7. Technical Considerations
 - Presentation should be reproducible from the provided data and code
-- Use PyMC for modeling, pandas for data handling, and matplotlib/seaborn for plots
-- Ensure compatibility with Quarto and Marimo/Jupyter
+- Use PyMC for modeling, polars for data handling, and arviz/matplotlib/seaborn for plots
+- Ensure compatibility with Quarto and Marimo
 - Holidays/events data will be provided later and should be easy to incorporate
 
 ## 8. Success Metrics

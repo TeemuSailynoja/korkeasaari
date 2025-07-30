@@ -13,10 +13,12 @@ repos:
     hooks:
       - id: ruff
         args: [--fix, --exit-non-zero-on-fix]
+        exclude: 'presentation/korkeasaari_slides_files/|.*\.html$'
       - id: ruff-format
+        exclude: 'presentation/korkeasaari_slides_files/|.*\.html$'
 
   - repo: https://github.com/codespell-project/codespell
     rev: v2.4.1
     hooks:
       - id: codespell
-        args: ["--ignore-words=.codespellignore", "--skip=*.ipynb,pixi.lock"]
+        args: ["--ignore-words=.codespellignore", "--skip=*.ipynb,pixi.lock,*.html,presentation/korkeasaari_slides_files/*"]
