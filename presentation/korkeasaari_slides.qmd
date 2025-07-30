@@ -1,0 +1,64 @@
+---
+title: "Korkeasaari PyMC Timeseries Presentation"
+author: "Teemu Sailynoja"
+date: "2025-07-30"
+format:
+  revealjs:
+    theme: [default, nord.scss]
+    slide-number: true
+    transition: fade
+---
+
+# Introduction
+
+Welcome to the Korkeasaari Zoo PyMC timeseries modeling presentation.
+
+---
+
+# Modeling Workflow
+
+- Data sources: visitors, weather
+- Incremental modeling steps
+- Visualizations and code explanations
+
+---
+
+# Baseline Model
+
+- Intercept + seasonal effect
+- Model code and explanation
+
+---
+
+# Add Weather Predictors
+
+- Incorporate weather data
+- Model code and explanation
+
+---
+
+# Add Holidays/Events Predictors
+
+- Placeholder for future data
+- Model code and explanation
+
+---
+
+# Model Convergence & Comparison
+
+- Diagnostics and results
+- Visual comparison of models
+
+---
+
+# Documentation & Logic
+
+- Code snippets and explanations
+- Step-by-step modeling logic
+
+---
+
+# Next Steps
+
+- Finalize presentation
+- Export and test
