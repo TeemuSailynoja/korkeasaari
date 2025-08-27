@@ -1,37 +1,25 @@
-# korkeasaari
+# Iterative Bayesian Modelling: Korkeasaari Zoo
 
-*Description of the project/package. Make it super easy for people to understand what it does. Add links to external resources like Notion, SOWs, etc.if needed.*
+Materials from my [PyData Helsinki](https://pydata-helsinki.github.io/) 2025 talk on analyzing Korkeasaari Zoo visitor data using Bayesian modeling.
 
-## Features
-
-*Bullet form list of the most important features of the project/package.*
-
-## Usage
-
-*How to use `korkeasaari`. Include examples and code snippets.*
+## Key Findings
+- During 2023, Korkeasaari Zoo lost 20,000 to 40,000 visitors due to rainy days in the summer
+- The impact of the tiger cubs born in September 2022 was likely small, 1000 or so additional visitors, but difficult to estimate using open data alone
 
 ## Project Structure
+```
+.
+├── data/           # Data files used in analysis
+├── docs/           # Presentation slides (Quarto RevealJS)
+├── notebooks/      # Marimo notebooks for analysis
+└── scripts/        # Data processing scripts
+```
 
-- `korkeasaari/`: Contains the package logic
-- `tests/`: Contains tests for the package
-- `exploration/`: Contains exploratory code for testing new features
+## Getting Started
 
-## Development
+1. Run `pixi install` to install the dependencies
+2. Run `pixi marimo edit` to start exploring the [notebooks](notebooks/)
 
-This package has been created with [pymc-labs/project-starter](https://github.com/pymc-labs/project-starter). It features:
+## License
 
-- 📦 **`pixi`** for dependency and environment management.
-- 🧹 **`pre-commit`** for formatting, spellcheck, etc. If everyone uses the same standard formatting, then PRs won't have flaky formatting updates that distract from the actual contribution. Reviewing code will be much easier.
-- 🏷️ **`beartype`** for runtime type checking. If you know what's going in and out of functions just by reading the code, then it's easier to debug. And if these types are even enforced at runtime with tools like `beartype`, then there's a whole class of bugs that can never enter your code.
-- 🧪 **`pytest`** for testing. Meanwhile, with `beartype` handling type checks, tests do not have to assert types, and can merely focus on whether the actual logic works.
-- 🔄 **Github Actions** for running the pre-commit checks on each PR, automated testing and dependency management (dependabot).
-
-### Prerequisites
-
-- Python 3.11 or higher
-- [Pixi package manager](https://pixi.sh/latest/)
-
-### Get started
-
-1. Run `pixi install` to install the dependencies.
-2. Run `pixi r test` to run the tests.
+This project is licensed under the MIT License - feel free to use, modify and share the code and materials as you wish.

@@ -31,7 +31,7 @@ All dependencies should be managed using pixi (see `pixi.lock` and `pyproject.to
   - [x] 2.4 Prepare for easy addition of holidays/events data
 
 - [ ] 3.0 Implement and demonstrate incremental PyMC timeseries models
-  - [ ] 3.1 Implement baseline model: intercept + seasonal effect
+  - [x] 3.1 Implement baseline model: intercept + seasonal effect
   - [ ] 3.2 Add weather predictors to the model
   - [ ] 3.3 Add holidays/events predictors (placeholder for future data)
   - [ ] 3.4 Check model convergence and compare results at each step

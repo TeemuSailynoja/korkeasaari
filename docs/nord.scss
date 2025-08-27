@@ -1,0 +1,156 @@
+/*-- scss:defaults --*/
+$body-color: #2E3440;
+$body-bg: #D8DEE9;
+$heading-color: #88C0D0;
+$link-color: #8FBCBB;
+$code-bg: #434C5E;
+$code-color: #EBCB8B;
+$border-color: #4C566A;
+
+/*-- scss:rules --*/
+.reveal {
+  background: $body-bg;
+  color: $body-color;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: $heading-color;
+}
+
+.reveal code, .reveal pre {
+  background: $code-bg;
+  color: $code-color;
+}
+
+.reveal a {
+  color: $link-color;
+}
+
+.reveal strong {
+  color: #BF616A;
+}
+
+.reveal em {
+  color: #B48EAD;
+}
+
+.reveal .slide-background {
+  background: $body-bg;
+}
+
+.reveal .revealjs-menu {
+  background: $border-color;
+  color: $body-color;
+}
+
+.reveal .toc {
+  background: #3B4252;
+  color: #81A1C1;
+}
+
+// /*-- scss:defaults --*/
+// $body-bg: #ECEFF4;
+// $body-color: #2E3440;
+// $heading-color: #5E81AC;
+// $link-color: #88C0D0;
+// $code-bg: #E5E9F0;
+// $code-color: #D08770;
+// $border-color: #D8DEE9;
+
+// /*-- scss:rules --*/
+// .reveal.nord-light {
+//   background: $body-bg-light;
+//   color: $body-color-light;
+// }
+
+// .reveal.nord-light h1, .reveal.nord-light h2, .reveal.nord-light h3, .reveal.nord-light h4 {
+//   color: $heading-color-light;
+// }
+
+// .reveal.nord-light code, .reveal.nord-light pre {
+//   background: $code-bg-light;
+//   color: $code-color-light;
+// }
+
+// .reveal.nord-light a {
+//   color: $link-color-light;
+// }
+
+// .reveal.nord-light strong {
+//   color: #BF616A;
+// }
+
+// .reveal.nord-light em {
+//   color: #B48EAD;
+// }
+
+// .reveal.nord-light .slide-background {
+//   background: $body-bg-light;
+// }
+
+// .reveal.nord-light .revealjs-menu {
+//   background: $border-color-light;
+//   color: $body-color-light;
+// }
+
+// .reveal.nord-light .toc {
+//   background: #E5E9F0;
+//   color: #5E81AC;
+// }
+// /*-- scss:defaults --*/
+// $body-color: #2E3440;
+// $body-bg: #D8DEE9;
+// $heading-color: #88C0D0;
+// $link-color: #8FBCBB;
+// $code-bg: #434C5E;
+// $code-color: #EBCB8B;
+// $border-color: #4C566A;
+/*-- scss:defaults --*/
+$body-bg: #ECEFF4;
+$body-color: #2E3440;
+$heading-color: #5E81AC;
+$link-color: #88C0D0;
+$code-bg: #E5E9F0;
+$code-color: #D08770;
+$border-color: #D8DEE9;
+
+/*-- scss:rules --*/
+.reveal {
+  background: $body-bg;
+  color: $body-color;
+}
+
+.reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+  color: $heading-color;
+}
+
+.reveal code, .reveal pre {
+  background: $code-bg;
+  color: $code-color;
+}
+
+.reveal a {
+  color: $link-color;
+}
+
+.reveal strong {
+  color: #BF616A;
+}
+
+.reveal em {
+  color: #B48EAD;
+}
+
+.reveal .slide-background {
+  background: $body-bg;
+}
+
+.reveal .revealjs-menu {
+  background: $border-color;
+  color: $body-color;
+}
+
+.reveal .toc {
+  background: #3B4252;
+  color: #81A1C1;
+}

@@ -1,0 +1,237 @@
+---
+title: "Bayesian Beasts: Iterative modelling with PyMC"
+author: "Teemu Sailynoja"
+date: "2025-08-26"
+project:
+  execute-dir: project
+format:
+  revealjs:
+    theme: [default, nord.scss]
+    slide-number: true
+    transition: fade
+    smaller: true
+revealjs-plugins:
+  - editable
+filters:
+  - editable
+---
+
+## Agenda
+
+- Me: Hi!
+- Bayes
+  - What & Why
+- Korkeasaari
+  - Data Peek
+  - Questions Asked
+  - Baseline Model
+  - Model Iterations
+  - Questions Answered
+
+---
+
+## Me: Teemu Säilynoja {.smaller}
+
+::: {.columns}
+
+::: {.column width="80%"}
+
+🎓 **Doctor of Science Candidate**
+
+Wrapping up my DSc at Aalto University.
+
+  - Workflow of Bayesian model building
+
+
+💼 **Consultant for PyMC Labs**
+
+Applying Bayesian methods to real-world problems.
+
+  - Marketing analytics (Media Mixed Models)
+
+
+**🛠️ Open Source**
+
+Contributing to Bayesian modelling ecosystem in **Python** and **R**.
+
+:::
+
+::: {.column width="20%"}
+
+![](assets/aalto-logo.png){.absolute width=154.561px height=132.58px left=612.381px top=81.5561px}
+
+![](assets/labs-logo.png){.absolute width=253.012px height=91.9377px left=665.932px top=232.951px}
+
+![](assets/stanlogo.png){.absolute width=120.605px height=117.976px left=670.434px top=356.42px}
+
+![](assets/pymcm.png){.absolute width=191.156px height=141.483px left=800.205px top=478.902px}
+
+:::
+
+:::
+
+
+## Bayes: What
+
+"Bayesian inference is a method of statistical reasoning that updates our beliefs about unknown quantities using observed data."
+
+## Bayes: What
+$$
+\color{orange}{P( \theta \mid y)} = \frac{\color{blue}{P(y \mid \theta)}\color{red}{P(\theta)}}{P(y)}
+$$
+
+- [Posterior: Belief of parameters after seeing the data]{style="color:orange;"}
+- [Likelihood: How likely the observed data is, given the parameters]{style="color:blue;"}
+- [Prior: What we think before seeing the data]{style="color:red;"}
+- "Normalizing constant"
+
+---
+
+## Bayes: What
+$$
+{P( \theta \mid y)} = \frac{{P(y \mid \theta)}{P(\theta)}}{\color{red}{\displaystyle \int P(y \mid \theta)\, d \theta}}
+$$
+
+- Posterior: Belief of parameters after seeing the data
+- Likelihood: How likely the observed data is, given the parameters
+- Prior: What we think before seeing the data\
+- ["Normalizing constant"]{style="color:red;"}
+
+## Bayes: Why
+
+- Prior knowledge
+- Quantifies uncertainty
+- Transparent and explainable models
+- Iterative modelling
+- Causal inference
+- ...
+
+## Bayes: How
+
+::: {.columns}
+::: {.column}
+![](assets/PyMC_banner.svg){width=397.624px}
+
+::: {.callout-note appearance="simple"}
+PyMC is a **probabilistic programming** library for Python that allows users to build Bayesian models with a simple Python API and fit them using Markov chain Monte Carlo (MCMC) methods.
+:::
+:::
+
+::: {.column}
+![](assets/stanlogo.png){width=219.507px}
+
+::: {.callout-note appearance="simple"}
+Stan offers a **probabilistic programming language** for statistical modeling using Bayesian inference.
+
+Interfaces for Python, Julia, R, and the Unix shell.
+
+:::
+:::
+:::
+
+
+
+# Korkeasaari
+
+
+##
+::: {.columns}
+::: {.column}
+![](assets/zoo-logo.png){width="400"}
+:::
+::: {.column}
+![](assets/fri-sh.png){width="400"}
+
+Daily visitors counts since 2010 [^1]
+
+![](assets/fmi.png){width="400"}
+
+Hourly rainfall and temperature [^2]
+
+
+[^1]: [https://hri.fi/en/](https://hri.fi/en/)
+[^2]: [https://en.ilmatieteenlaitos.fi/download-observations](https://en.ilmatieteenlaitos.fi/download-observations)
+
+:::
+:::
+
+
+## Data
+
+```{python}
+#| echo: false
+import pandas as pd
+from plotnine import *
+
+data = pd.read_csv(
+  "../data/clean/visitors.csv"
+).set_index("date")
+weather = pd.read_csv(
+  "../data/clean/helsinki_kaisaniemi_daily_filtered.csv"
+).set_index("date")
+
+data = (
+  data
+  .join(weather)
+  .rename(columns={
+    "Lämpötilan keskiarvo [°C]": "temperature [°C]",
+    "Tunnin sademäärä [mm]":"rain [mm / h]"
+    })[["visitors", "temperature [°C]", "rain [mm / h]"]]
+    .dropna()
+    .reset_index()
+    .melt(id_vars = "date")
+)
+```
+
+```{python}
+(
+  ggplot(data, aes("date", "value", color="variable"))
+    + geom_point()
+    + facet_wrap("variable", scales = "free_y", ncol = 1)
+    + theme_bw()
+    + theme(
+      legend_position="none",
+      axis_title=element_blank(),
+      )
+    + scale_x_date()
+)
+```
+
+## Questions
+
+
+:::{.callout-tip appearance="simple"}
+Q1: How much does rain affect the visitor counts?
+:::
+
+:::{.callout-tip appearance="simple"}
+Q2: Was there a tiger cub hype?
+:::
+
+# Hello PyMC
+
+## Questions answered
+:::{.callout-tip appearance="simple"}
+Q1: How much does rain affect the visitor counts?
+:::
+::: {.columns}
+::: {.column}
+![Rain: effect](assets/rain_impact.png)
+:::
+::: {.column}
+![Rain: cumulative effect](assets/rain_cumulative.png)
+:::
+:::
+
+## Questions answered
+:::{.callout-tip appearance="simple"}
+Q2: Was there a tiger cub hype?
+:::
+::: {.columns}
+::: {.column}
+![Tiger baby hype](assets/tiger_impact.png)
+:::
+::: {.column}
+![Tiger baby hype: cumulative effect](assets/tiger_cumulative.png)
+:::
+:::

@@ -13,6 +13,10 @@
 
 # Ignore cache directories
 __pycache__/
+__marimo__/
+.pytest_cache/
+.ruff_cache
+.pixi
 
 # Ignore Beartype cache files
 *.opt-beartype*
@@ -20,3 +24,6 @@ __pycache__/
 .vscode/
 .ruff_cache/
 .pytest_cache/
+
+tasks/
+rules/

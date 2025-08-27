@@ -4,7 +4,7 @@ description = "Add a short description here"
 name = "korkeasaari"
 requires-python = ">= 3.11"
 version = "0.1.0"
-dependencies = ["openmeteo-requests>=1.5.0,<2", "retry-requests>=2.0.0,<3", "requests-cache>=1.2.1,<2"]
+dependencies = [ "openmeteo-requests>=1.7.0,<2", "retry-requests>=2.0.0,<3", "requests-cache>=1.2.1,<2", "marimo[recommended]>=0.14.17,<0.15", "polars[pyarrow]>=1.32.3,<2"]
 
 [project.optional-dependencies]
 test = ["pytest"]
@@ -21,24 +21,29 @@ platforms = ["osx-arm64", "linux-64", "osx-64"]
 korkeasaari = { path = ".", editable = true }
 
 [tool.pixi.dependencies]
-pandas = "*"
-numpy = "*"
-ruff = "*"
-python-dotenv = "*"
-pre-commit = "*"
-beartype = "*"
-pymc = "*"
+pandas = ">=2.3.1,<3"
+numpy = ">=2.2.6,<3"
+ruff = ">=0.12.8,<0.13"
+python-dotenv = ">=1.1.1,<2"
+pre-commit = ">=4.3.0,<5"
+beartype = ">=0.21.0,<0.22"
+pymc = ">=5.25.1,<6"
 openpyxl = ">=3.1.5,<4"
-jupyterlab = ">=4.4.3,<5"
-ipykernel = ">=6.29.5,<7"
+jupyterlab = ">=4.4.5,<5"
+ipykernel = ">=6.30.1,<7"
 ipywidgets = ">=8.1.7,<9"
-marimo = ">=0.13.6,<0.14"
-openai = ">=1.84.0,<2"
+openai = ">=1.99.7,<2"
 seaborn = ">=0.13.2,<0.14"
-matplotlib = ">=3.10.3,<4"
-nutpie = ">=0.13.4,<0.14"
+matplotlib = ">=3.10.5,<4"
+nutpie = ">=0.15.2,<0.16"
 numba = ">=0.61.2,<0.62"
-pymc-marketing = ">=0.14.0"
+pymc-marketing = ">=0.15.1,<0.16"
+altair = ">=5.5.0,<6"
+jax = ">=0.7.0,<0.8"
+numpyro = ">=0.19.0,<0.20"
+blackjax = ">=1.2.4,<2"
+python-lsp-server = ">=1.13.0,<2"
+plotnine = ">=0.15.0,<0.16"
 
 [tool.pixi.environments]
 default = { features = ["test"], solve-group = "default" }
