@@ -1,13 +1,10 @@
 [project]
-authors = [{name = "pymc-labs", email = "info@pymc-labs.com"}]
-description = "Add a short description here"
+authors = [{name = "Teemu Säilynoja", email = "teemu.sailynoja@gmail.com"}]
+description = "Environment to reproduce my notebooks for PyData presentation."
 name = "korkeasaari"
 requires-python = ">= 3.11"
 version = "0.1.0"
-dependencies = [ "openmeteo-requests>=1.7.0,<2", "retry-requests>=2.0.0,<3", "requests-cache>=1.2.1,<2", "marimo[recommended]>=0.14.17,<0.15", "polars[pyarrow]>=1.32.3,<2"]
-
-[project.optional-dependencies]
-test = ["pytest"]
+dependencies = ["marimo[recommended]>=0.14.17,<0.15", "polars[pyarrow]>=1.32.3,<2"]
 
 [build-system]
 build-backend = "hatchling.build"
@@ -29,10 +26,7 @@ pre-commit = ">=4.3.0,<5"
 beartype = ">=0.21.0,<0.22"
 pymc = ">=5.25.1,<6"
 openpyxl = ">=3.1.5,<4"
-jupyterlab = ">=4.4.5,<5"
-ipykernel = ">=6.30.1,<7"
 ipywidgets = ">=8.1.7,<9"
-openai = ">=1.99.7,<2"
 seaborn = ">=0.13.2,<0.14"
 matplotlib = ">=3.10.5,<4"
 nutpie = ">=0.15.2,<0.16"
@@ -44,11 +38,3 @@ numpyro = ">=0.19.0,<0.20"
 blackjax = ">=1.2.4,<2"
 python-lsp-server = ">=1.13.0,<2"
 plotnine = ">=0.15.0,<0.16"
-
-[tool.pixi.environments]
-default = { features = ["test"], solve-group = "default" }
-test = { features = ["test"], solve-group = "default" }
-minimal = { features = [], solve-group = "default" }
-
-[tool.pixi.feature.test.tasks]
-test = "pytest"
