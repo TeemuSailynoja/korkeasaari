@@ -1,6 +1,6 @@
 # Iterative Bayesian Modelling: Korkeasaari Zoo
 
-Materials from my [PyData Helsinki](https://pydata-helsinki.github.io/) 2025 talk on analyzing Korkeasaari Zoo visitor data using Bayesian modeling.
+Materials from my [PyData Helsinki](https://pydata-helsinki.github.io/) 2025 talk on iteratively building up a Bayesian model to predict Korkeasaari Zoo visitor counts.
 
 ## Key Findings
 - During 2023, Korkeasaari Zoo lost 20,000 to 40,000 visitors due to rainy days in the summer
