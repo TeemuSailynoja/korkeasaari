@@ -2,6 +2,8 @@
 
 Materials from my [PyData Helsinki](https://pydata-helsinki.github.io/) 2025 talk on iteratively building up a Bayesian model to predict Korkeasaari Zoo visitor counts.
 
+[**Slides**](https://teemusailynoja.github.io/korkeasaari/korkeasaari_slides)
+
 ## Key Findings
 - During 2023, Korkeasaari Zoo lost 20,000 to 40,000 visitors due to rainy days in the summer
 - The impact of the tiger cubs born in September 2022 was likely small, 1000 or so additional visitors, but difficult to estimate using open data alone
