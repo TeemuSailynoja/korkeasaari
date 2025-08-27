@@ -6,6 +6,7 @@ project:
   execute-dir: project
 format:
   revealjs:
+    output-file: "index"
     theme: [default, nord.scss]
     slide-number: true
     transition: fade
